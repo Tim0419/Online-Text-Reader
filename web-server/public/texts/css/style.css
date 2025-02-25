@@ -1,0 +1,50 @@
+/* 全局設置 */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+/* 容器樣式 */
+#button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* 按鈕樣式 */
+.btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* 按鈕懸停效果 */
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* 按鈕點擊效果 */
+.btn:active {
+    background-color: #004093;
+    transform: scale(0.95);
+}
+
+/* 響應式設計 */
+@media (max-width: 600px) {
+    .btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}

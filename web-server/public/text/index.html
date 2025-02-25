@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>選擇章節</title>
+    <link rel="stylesheet" href="../css/map-style.css">
+    <script>
+        (function () {
+            if (!window.location.pathname.endsWith('/')) {
+                const newPath = window.location.pathname + '/';
+                window.location.replace(newPath + window.location.search);
+            }
+        })();
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>選擇章節</h1>
+        <div id="jump-to-page-container">
+            <input type="number" id="page-input" placeholder="輸入頁碼">
+            <button onclick="jumpToPage()" class="btn">跳轉</button>
+        </div>
+        <div id="link-container"></div> <!-- 放置章節連結 -->
+        
+        <div class="pagination">
+            <button onclick="previousPage()" class="btn" id="previous-btn">上一頁</button>
+            <button onclick="nextPage()" class="btn" id="next-btn">下一頁</button>
+        </div>
+    </div>
+
+    <script src="../js/map-script.js"></script>
+</body>
+</html>

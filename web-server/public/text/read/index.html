@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading...</title>
+    <script>
+        (function () {
+            if (window.location.pathname.endsWith('/') && window.location.pathname !== '/') {
+                const newPath = window.location.pathname.slice(0, -1); // Delete the end `/`
+                window.location.replace(newPath + window.location.search); // Preserving URL parameters
+            }
+        })();
+    </script>
+    <link rel="stylesheet" href="../../css/style.css">
+
+</head>
+<body>
+    <div class="container">
+        <!-- The area that show content-->
+        <div class="container2">
+            <h1>Loading...</h1>
+            <p>Please wait, the content is loading...</p>
+        </div>
+        
+        <!-- buttons -->
+        <div class="button-group">
+            <button onclick="goToPreviousPage()" class="btn prev">Prev</button>
+            <a href="../" class="btn home">目錄</a>
+            <button onclick="goToNextPage()" class="btn next">Next</button>
+        </div>
+    </div>
+
+    <script src="../../js/script.js"></script>
+</body>
+</html>
