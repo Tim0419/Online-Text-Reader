@@ -77,5 +77,5 @@ function jumpToPage() {
     }
 }
 
-// 頁面載入時執行
+
 document.addEventListener("DOMContentLoaded", fetchTotalChapters);
