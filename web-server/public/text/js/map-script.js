@@ -37,7 +37,7 @@ function renderChapterLinks(page) {
 
     for (let i = startIndex; i <= endIndex; i++) {
         const link = document.createElement('a');
-        link.href = `../../text/${novelId}/read/${i}`;
+        link.href = `../../text/${textId}/read/${i}`;
         link.textContent = `Text ${i}`;
         link.className = 'btn';
         linkContainer.appendChild(link);
