@@ -10,7 +10,7 @@ app.use(express.static(path.join(__dirname, "database"))); // 📌 File storage 
 
 const DATABASE_PATH = path.join(__dirname, "database/texts"); 
 
-// 📌 Get the catalog of the texts
+// 📌 Get table of contents of the texts
 app.get("/api/texts", (req, res) => {
     fs.readdir(DATABASE_PATH, (err, files) => {
         if (err) return res.status(500).json({ error: "Cannot Get the file storage path" });
@@ -50,10 +50,10 @@ app.get("/api/text/:id/pages", (req, res) => {
 app.get("/api/text/:id/read/:page", (req, res) => {
     const filePath = path.join(DATABASE_PATH, req.params.id, "text", `p${req.params.page}.txt`);
 
-    if (!fs.existsSync(filePath)) return res.status(404).json({ error: "章節不存在" });
+    if (!fs.existsSync(filePath)) return res.status(404).json({ error: "Chapter does NOT exist" });
 
     fs.readFile(filePath, "utf-8", (err, data) => {
-        if (err) return res.status(500).json({ error: "無法讀取章節" });
+        if (err) return res.status(500).json({ error: "Cannot read the chapter" });
 
         res.json({ content: data });
     });
