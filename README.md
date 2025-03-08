@@ -40,10 +40,16 @@ Online-Text-Reader/
 
 # Environment Build by Node.js
 1. Install [Node.js](https://nodejs.org/) or
-   ```
-   winget install Schniz.fnm
-   fnm install 22
-   ```
+   - Linux/macOS
+      ```bash
+      curl -o- https://fnm.vercel.app/install | ba
+      fnm install 22
+      ```
+   - Windows
+      ```batch
+      winget install Schniz.fnm
+      fnm install 22
+      ```
 
 2. Install modules
     - For web-server
