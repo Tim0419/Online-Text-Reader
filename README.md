@@ -65,4 +65,13 @@ Online-Text-Reader/
     "title": "your title"
   }
   ```
-  
+
+---
+
+#Disclaimer
+
+This software is released under the **GPL-3.0 License**, allowing users to freely use, modify, and distribute it.  
+
+**This software is intended for legal use only. The developers are not responsible for any misuse or illegal activities involving this software.**  
+
+By using this software, you agree to take full responsibility for its usage. The developers provide no warranty or legal liability.
