@@ -8,6 +8,14 @@ By using this software, you agree to take full responsibility for its usage. The
 
 ---
 
+# Introduction
+
+---
+
+# Functions
+
+---
+
 # Structure
 ## 1. File Structure
 ```
