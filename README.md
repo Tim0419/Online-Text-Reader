@@ -42,7 +42,7 @@ Online-Text-Reader/
 1. Install [Node.js](https://nodejs.org/) or
    - Linux/macOS
       ```bash
-      curl -o- https://fnm.vercel.app/install | ba
+      curl -o- https://fnm.vercel.app/install | bash
       fnm install 22
       ```
    - Windows
