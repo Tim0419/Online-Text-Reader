@@ -68,7 +68,7 @@ Online-Text-Reader/
            }
            ```
       - The content:　`/api/text/{num}/read/{num2}`
-         -Response
+         - Response
            ```json
            {
               "content": "content"
