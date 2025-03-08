@@ -15,6 +15,8 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
+let content = '';
+
 function extractParamsFromURL() {
     const path = window.location.pathname; 
     const match = path.match(/\/text\/(\d+)\/read\/(\d+)/);
@@ -50,7 +52,7 @@ async function fetchPageContent() {
         
         const data = await response.json();
         const contentContainer = document.querySelector(".container2");
-
+        content = data.content;
         const formattedContent = `<p>${data.content.replace(/\n/g, "</p><p>")}</p>`;
 
 
@@ -88,7 +90,7 @@ function goToNextPage() {
 
 
 function updateURLAndLoadContent() {
-    history.pushState(null, "", `/text/${chapterId}/read/${pageNum}`);
+    history.pushState(null, "", `/text/${textId}/read/${pageNum}`);
     fetchPageContent();
 }
 

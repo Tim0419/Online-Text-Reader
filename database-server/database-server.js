@@ -19,7 +19,7 @@ const express = require("express");
 const cors = require("cors");
 const fs = require("fs");
 const path = require("path");
-
+const PORT = 3000;
 const app = express();
 app.use(cors());
 
@@ -76,4 +76,4 @@ app.get("/api/text/:id/read/:page", (req, res) => {
     });
 });
 
-app.listen(3000, () => console.log("✅ Database API server running on http://localhost:3000"));
+app.listen(PORT, () => console.log("✅ Database API server running on http://localhost:3000"));
