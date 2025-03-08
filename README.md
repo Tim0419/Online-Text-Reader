@@ -46,11 +46,11 @@ Online-Text-Reader/
    ```
 
 2. Install modules
-    1. For web-server
+    - For web-server
         ```
         npm install express
         ```
-    2. For database-server
+    - For database-server
         ```
         npm install express cors
         ```
