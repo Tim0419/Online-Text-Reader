@@ -62,13 +62,6 @@ async function fetchPageContent() {
     }
 }
 
-function init_functions() {
-    clickCount = [];
-    clearInterval(intervalId);
-    intervalId = null;
-    speechSynthesis.cancel();
-}
-
 function goToPreviousPage() {
     if (pageNum > 1) {
         pageNum--;
@@ -81,7 +74,6 @@ function goToPreviousPage() {
     }
     
 }
-
 
 function goToNextPage() {
     if (pageNum < totalPageCount) {
@@ -99,48 +91,6 @@ function updateURLAndLoadContent() {
     history.pushState(null, "", `/text/${chapterId}/read/${pageNum}`);
     fetchPageContent();
 }
-
-function startSpeaking() {
-    const content = data.content;
-    const utterance = new SpeechSynthesisUtterance(content);
-    utterance.lang = "zh-tw";
-    utterance.rate = 1.0; 
-    utterance.pitch = 1.0; 
-    utterance.volume = 1.0;
-    speechSynthesis.speak(utterance);
-}
-
-function stopSpeaking() {
-    speechSynthesis.cancel();
-}  
-
-
-
-let click = [];
-let intervalID = null
-const clicktimes=2
-
-document.addEventListener("click",function() {
-    click.push(Date.now());
-
-    if (click.length > clicktimes) {
-        click.shift();
-    }
-
-    if (click.length === clicktimes && click[clicktimes -1] - click[0] <= 500){
-        if (!intervalID) {
-            intervalID = setInterval(() => {
-                window.scrollBy(0,1);
-            }, 15);
-        } else {
-            click = [];
-            clearInterval(intervalID);
-            intervalID = null;
-        }
-    }
-
-
-});
 
 async function initializePage() {
     await fetchTotalPageCount(); 

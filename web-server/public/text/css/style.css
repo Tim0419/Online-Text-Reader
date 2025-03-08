@@ -92,3 +92,30 @@ p {
   align-items: center;
   margin-top: 20px;
 }
+
+.btn.start_speaking {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.btn.stop_speaking {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn.start_speaking:hover {
+  background-color: #218838;
+  border-color: #218838;
+}
+
+.btn.stop_speaking:hover {
+  background-color: #c82333;
+  border-color: #c82333;
+}
+
+@media (max-width: 320px) {
+  .btn{
+    padding: 9px 18px;
+    font-size: 14px;
+  }
+}
