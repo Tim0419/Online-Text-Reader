@@ -3,25 +3,25 @@ function extractParamsFromURL() {
     const path = window.location.pathname; 
     const match = path.match(/\/text\/(\d+)\/read\/(\d+)/);
     if (match) {
-        return { chapterId: parseInt(match[1]), pageNum: parseInt(match[2]) };
+        return { textId: parseInt(match[1]), pageNum: parseInt(match[2]) };
     }
-    return { chapterId: 1, pageNum: 1 }; 
+    return { textId: 1, pageNum: 1 }; 
 }
 
-let { chapterId, pageNum } = extractParamsFromURL();
+let { textId, pageNum } = extractParamsFromURL();
 let totalPageCount = 1; 
 
 
 async function fetchTotalPageCount() {
     try {
-        const response = await fetch(`http://localhost:3000/api/text/${chapterId}/pages`);
+        const response = await fetch(`http://localhost:3000/api/text/${textId}/pages`);
         if (!response.ok) throw new Error(`HTTP Error! Status: ${response.status}`);
         
         const data = await response.json();
         totalPageCount = data.totalPages;
-        console.log(`Chapter ${chapterId} has ${totalPageCount} pages.`);
+        console.log(`Text ${textId} has ${totalPageCount} pages.`);
     } catch (error) {
-        console.error(`Error fetching total pages for Chapter ${chapterId}:`, error.message);
+        console.error(`Error fetching total pages for text ${textId}:`, error.message);
         //alert("");
     }
 }
@@ -29,7 +29,7 @@ async function fetchTotalPageCount() {
 
 async function fetchPageContent() {
     try {
-        const response = await fetch(`http://localhost:3000/api/text/${chapterId}/read/${pageNum}`);
+        const response = await fetch(`http://localhost:3000/api/text/${textId}/read/${pageNum}`);
         if (!response.ok) throw new Error(`HTTP Error! Status: ${response.status}`);
         
         const data = await response.json();
@@ -41,7 +41,7 @@ async function fetchPageContent() {
         document.title = `${pageNum}`;
         contentContainer.innerHTML = `<h1>${pageNum}</h1>${formattedContent}`;
     } catch (error) {
-        console.error(`Error fetching content for Chapter ${chapterId}, Page ${pageNum}:`, error.message);
+        console.error(`Error fetching content for Text ${textId}, Page ${pageNum}:`, error.message);
         alert("Unable to load content, please try again later.");
     }
 }
