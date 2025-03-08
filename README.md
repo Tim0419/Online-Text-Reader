@@ -68,7 +68,7 @@ Online-Text-Reader/
 
 ---
 
-#Disclaimer
+# Disclaimer
 
 This software is released under the **GPL-3.0 License**, allowing users to freely use, modify, and distribute it.  
 
