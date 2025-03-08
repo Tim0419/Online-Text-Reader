@@ -15,6 +15,10 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
+body {
+  background-color: rgb(238, 206, 163);
+}
+
 .container {
   width: 100%;
   max-width: 1000px;
@@ -23,6 +27,7 @@
   border-radius: 10px;
   margin: 0 auto;
   box-sizing: border-box;
+  background-color: antiquewhite;
 }
 
 .container2 {
@@ -41,7 +46,6 @@ p {
   border: none;
   background: none;
 }
-
 .btn {
   padding: 10px 20px;
   color: #fff;
@@ -81,18 +85,6 @@ p {
   color: #000;
 }
 
-.btn.home:hover {
-  background-color: #e0a800;
-  border-color: #e0a800;
-}
-
-.button-group {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 20px;
-}
-
 .btn.start_speaking {
   background-color: #28a745;
   border-color: #28a745;
@@ -103,6 +95,11 @@ p {
   border-color: #dc3545;
 }
 
+.btn.home:hover {
+  background-color: #e0a800;
+  border-color: #e0a800;
+}
+
 .btn.start_speaking:hover {
   background-color: #218838;
   border-color: #218838;
@@ -111,6 +108,13 @@ p {
 .btn.stop_speaking:hover {
   background-color: #c82333;
   border-color: #c82333;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
 }
 
 @media (max-width: 320px) {
