@@ -30,6 +30,7 @@ Online-Text-Reader/
 │   │   │   │   ├── style.css
 │   │   │   │   └── map-style.css
 │   │   │   └── js/
+│   │   │       ├── functions.js
 │   │   │       ├── script.js
 │   │   │       └── map-script.js
 │   │   └── index.html
