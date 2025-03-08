@@ -57,21 +57,21 @@ Online-Text-Reader/
         - Response 
           ```json
           {
-             "id': "id"
+             "id": "id"
              "title": "title"
           }
       - The total pages of the text: `/api/text/{num}/pages`
          - Response
-           ```json
+           ```
            {
-              "totalPages: num
+              "totalPages": num
            }
            ```
       - The content:　`/api/text/{num}/read/{num2}`
          -Response
            ```json
            {
-              "content": "comtent"
+              "content": "content"
            }
            ```
 
