@@ -52,7 +52,7 @@ Online-Text-Reader/
       - The table of content of the texts: `/texts`
       - The table of content of the text pages: `/text/{num}`
       - The reader: `/text/{num}/read/{num2}`
-   -API(database)
+   - API(database)
       - The number and title of texts: `api/texts`
         - Response 
           ```json
