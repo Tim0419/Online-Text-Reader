@@ -8,7 +8,8 @@ By using this software, you agree to take full responsibility for its usage. The
 
 ---
 
-# File Structure
+# Structure
+1. File Structure
 ```
 Online-Text-Reader/
 │
@@ -39,12 +40,39 @@ Online-Text-Reader/
 │   │   ├── texts/
 │   │   │   ├── {num}/
 │   │   │   │   ├── text
-│   │   │   │   │   ├── p{num}.txt // text content
+│   │   │   │   │   ├── p{num2}.txt // text content
 │   │   │   │   └── title.json
 │   │   │   └── ...
 |
 └──...
 ```
+2. URL Structure
+   - Web
+      - The table of content of the texts: `/texts`
+      - The table of content of the text pages: `/text/{num}`
+      - The reader: `/text/{num}/read/{num2}`
+   -API(database)
+      - The number and title of texts: `api/texts`
+        - Response 
+          ```json
+          {
+             "id': "id"
+             "title": "title"
+          }
+      - The total pages of the text: `/api/text/{num}/pages`
+         - Response
+           ```json
+           {
+              "totalPages: num
+           }
+           ```
+      - The content:　`/api/text/{num}/read/{num2}`
+         -Response
+           ```json
+           {
+              "content": "comtent"
+           }
+           ```
 
 ---
 
