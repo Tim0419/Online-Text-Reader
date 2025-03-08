@@ -9,7 +9,7 @@ By using this software, you agree to take full responsibility for its usage. The
 ---
 
 # Structure
-1. File Structure
+## 1. File Structure
 ```
 Online-Text-Reader/
 │
@@ -46,7 +46,7 @@ Online-Text-Reader/
 |
 └──...
 ```
-2. URL Structure
+## 2. URL Structure
    - Web
       - The table of content of the texts: `/texts`
       - The table of content of the text pages: `/text/{num}`
