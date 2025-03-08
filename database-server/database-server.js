@@ -31,7 +31,7 @@ const DATABASE_PATH = path.join(__dirname, "database/texts");
 app.get("/api/texts", (req, res) => {
     fs.readdir(DATABASE_PATH, (err, files) => {
         if (err) return res.status(500).json({ error: "Cannot Get the file storage path" });
-
+        files.sort((a,b) => parseInt(a) - parseInt(b));
         const texts = files.map((id) => {
             const titlePath = path.join(DATABASE_PATH, id, "title.json");
             let title = `Text ${id}`;
