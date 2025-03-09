@@ -1,6 +1,6 @@
 # [Disclaimer](https://github.com/Tim1000419/Online-Text-Reader/blob/main/LICENSE)
 
-This software is released under the **GPL-3.0 License**, allowing users to freely use, modify, and distribute it.  
+This software is released under the **[GPL-3.0 License](https://www.gnu.org/licenses/)**, allowing users to freely use, modify, and distribute it.  
 
 **This software is intended for legal use only. The developers are not responsible for any misuse or illegal activities involving this software.**  
 
