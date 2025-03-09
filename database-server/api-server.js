@@ -23,11 +23,10 @@ const PORT = 3000;
 const app = express();
 app.use(cors());
 
-app.use(express.static(path.join(__dirname, "database"))); // 📌 File storage path
+app.use(express.static(path.join(__dirname, "database"))); 
 
 const DATABASE_PATH = path.join(__dirname, "database/texts"); 
 
-// 📌 Get table of contents of the texts
 app.get("/api/texts", (req, res) => {
     fs.readdir(DATABASE_PATH, (err, files) => {
         if (err) return res.status(500).json({ error: "Cannot Get the file storage path" });
@@ -36,7 +35,7 @@ app.get("/api/texts", (req, res) => {
             const titlePath = path.join(DATABASE_PATH, id, "title.json");
             let title = `Text ${id}`;
 
-            // 📌 If `title.json` exists, read the title of text
+            
             if (fs.existsSync(titlePath)) {
                 const rawData = fs.readFileSync(titlePath, "utf-8");
                 const titleData = JSON.parse(rawData);
@@ -50,7 +49,7 @@ app.get("/api/texts", (req, res) => {
     });
 });
 
-// 📌 Get the numbers of the chapters of the texts
+
 app.get("/api/text/:id/pages", (req, res) => {
     const textPath = path.join(DATABASE_PATH, req.params.id, "text"); 
 
@@ -63,7 +62,6 @@ app.get("/api/text/:id/pages", (req, res) => {
     });
 });
 
-// 📌 Get the content of the chapters of the texts
 app.get("/api/text/:id/read/:page", (req, res) => {
     const filePath = path.join(DATABASE_PATH, req.params.id, "text", `p${req.params.page}.txt`);
 
@@ -76,4 +74,4 @@ app.get("/api/text/:id/read/:page", (req, res) => {
     });
 });
 
-app.listen(PORT, () => console.log("✅ Database API server running on http://localhost:3000"));
+app.listen(PORT, () => console.log("API server running on http://localhost:3000"));

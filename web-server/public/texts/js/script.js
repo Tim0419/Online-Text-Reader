@@ -40,11 +40,11 @@ function renderButtons(items) {
         return;
     }
 
-    container.innerHTML = ''; // Clear old content
+    container.innerHTML = ''; 
 
     items.forEach(item => {
         const button = document.createElement('button');
-        button.textContent = item.title || "Unnamed"; // Avoid empty title
+        button.textContent = item.title || "Unnamed"; 
         button.className = 'btn';
         button.onclick = () => window.location.href = `../../text/${item.id}/`;
 
@@ -52,5 +52,5 @@ function renderButtons(items) {
     });
 }
 
-// **Execute on load**
+
 document.addEventListener("DOMContentLoaded", fetchDataA);
