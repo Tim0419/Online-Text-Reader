@@ -1,24 +1,9 @@
-/*
-    ONLINE-TEXT-READER Copyright (C) 2025 YI-EN JHAN  
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-*/
-
-
 let clickCount = [];
 let mode = false;
 let intervalId = null;
+
+let crossPageScroll = null;
+
 
 function speakContent() {
     const read_content = content;
@@ -43,6 +28,8 @@ document.addEventListener("click", function() {
     }
 
     if (clickCount.length === 2 && (clickCount[1] - clickCount[0] <= 500)) {
+        clearInterval(crossPageScroll);
+        crossPageScroll = null;
         if (!intervalId) {
             intervalId = setInterval(() => {
                 window.scrollBy(0, 1);
@@ -54,6 +41,27 @@ document.addEventListener("click", function() {
         }
     }
 });
+
+document.addEventListener("keydown", function(event) {
+    if (event.key === "ArrowRight") {
+        goToNextPage();
+    } else if (event.key === "ArrowLeft") {
+        goToPreviousPage();
+    }
+});
+
+function scrolldownCrossPage() {
+    clearInterval(intervalId);
+    intervalId = null;
+    if (crossPageScroll) {
+        clearInterval(crossPageScroll);
+        crossPageScroll = null;
+    } else {
+        crossPageScroll = setInterval(() => {
+            window.scrollBy(0, 1);
+        }, 15);
+    }
+}
 
 function init_functions() {
     clickCount = [];
