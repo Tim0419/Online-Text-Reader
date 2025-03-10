@@ -44,7 +44,7 @@ Online-Text-Reader/
 │   │   └── index.html
 │
 ├── database-server/
-│   ├── database-server.js
+│   ├── api-server.js
 │   ├── database/
 │   │   ├── texts/
 │   │   │   ├── {num}/
