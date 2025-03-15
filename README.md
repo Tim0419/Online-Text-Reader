@@ -43,7 +43,7 @@ Online-Text-Reader/
 │   │   │       └── map-script.js
 │   │   └── index.html
 │
-├── database-server/
+├── api-server/
 │   ├── api-server.js
 │   ├── database/
 │   │   ├── texts/

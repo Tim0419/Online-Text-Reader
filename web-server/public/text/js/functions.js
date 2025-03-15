@@ -69,3 +69,4 @@ function init_functions() {
     intervalId = null;
     speechSynthesis.cancel();
 }
+ 
