@@ -32,4 +32,4 @@ app.get("/text/:id/", (req, res) => res.sendFile(path.join(__dirname, "public", 
 
 app.get("/text/:id/read/:page", (req, res) => res.sendFile(path.join(__dirname, "public", "text", "read", "index.html")));
 
-app.listen(PORT, () => console.log(`✅ Web server running on PORT ${PORT}`));
+app.listen(PORT, () => console.log(`Web server running on port ${PORT}`));

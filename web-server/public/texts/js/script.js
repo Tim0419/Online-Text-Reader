@@ -15,11 +15,12 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-async function fetchDataA() {
-    const apiUrl = "http://localhost:3000/api/texts";
+const API_URL = "http://localhost:3000/api/texts";
+
+async function fetchTexts() {
 
     try {
-        const response = await fetch(apiUrl);
+        const response = await fetch(API_URL);
         
         if (!response.ok) {
             throw new Error(`API request failed with status code: ${response.status}`);
@@ -32,7 +33,6 @@ async function fetchDataA() {
     }
 }
 
-// **Generate Button**
 function renderButtons(items) {
     const container = document.getElementById('button-container');
     if (!container) {
@@ -53,4 +53,4 @@ function renderButtons(items) {
 }
 
 
-document.addEventListener("DOMContentLoaded", fetchDataA);
+document.addEventListener("DOMContentLoaded", fetchTexts);

@@ -21,6 +21,20 @@ const fs = require("fs");
 const path = require("path");
 const PORT = 3000;
 const app = express();
+
+/*
+const Allowed_Origins = [];
+
+const corsOptions = {
+    origin: Allowed_Origins,
+    medthods: ["GET"],
+    allowedHeaders: ['Authorization', 'Content-Type', 'x-api-key']
+};
+
+app.use(cors(corsOptions));
+
+*/
+
 app.use(cors());
 
 app.use(express.static(path.join(__dirname, "database"))); 
@@ -56,7 +70,7 @@ app.get("/api/text/:id/pages", (req, res) => {
     if (!fs.existsSync(textPath)) return res.status(404).json({ error: "The text does NOT exist" });
 
     fs.readdir(textPath, (err, files) => {
-        if (err || !files.length) return res.status(404).json({ error: "There are no available chapter" });
+        if (err || !files.length) return res.status(404).json({ error: "There are no available pages" });
 
         res.json({ totalPages: files.filter(file => file.endsWith(".txt")).length });
     });
@@ -65,13 +79,13 @@ app.get("/api/text/:id/pages", (req, res) => {
 app.get("/api/text/:id/read/:page", (req, res) => {
     const filePath = path.join(DATABASE_PATH, req.params.id, "text", `p${req.params.page}.txt`);
 
-    if (!fs.existsSync(filePath)) return res.status(404).json({ error: "Chapter does NOT exist" });
+    if (!fs.existsSync(filePath)) return res.status(404).json({ error: "The page does NOT exist" });
 
     fs.readFile(filePath, "utf-8", (err, data) => {
-        if (err) return res.status(500).json({ error: "Cannot read the chapter" });
+        if (err) return res.status(500).json({ error: "Cannot read the page" });
 
         res.json({ content: data });
     });
 });
 
-app.listen(PORT, () => console.log("API server running on http://localhost:3000"));
+app.listen(PORT, () => console.log(`API server running on port ${PORT}`));

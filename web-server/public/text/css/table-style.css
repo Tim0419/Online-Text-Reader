@@ -1,13 +1,20 @@
+body {
+  background-color: rgb(238, 206, 163);
+  margin: 10px;
+}
 
 #link-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); /*Fixing*/
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); 
   grid-gap: 10px; 
   justify-items: center;
   padding: 20px;
   max-height: calc(5 * 50px); 
   overflow-y: auto;
   width: 900;
+  background-color: antiquewhite;
+  border-radius: 50px;
+  margin: auto;
 }
 
 
@@ -26,8 +33,15 @@
   background-color: #0056b3;
 }
 
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 5px 0;
+}
+
 
 #previous-btn, #next-btn {
+  display: flex;
   position: block;
   bottom: 20px; 
   padding: 10px 20px;
@@ -36,16 +50,17 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  position: fixed;
-  margin: 0px 0px 55px 0px
+  margin: 0 auto;
 }
 
 #previous-btn {
-  left: 20px; 
+  display: flex;
+  justify-items: start;
 }
 
 #next-btn {
-  right: 20px; 
+  display: flex;
+  justify-items: end;
 }
 
 #previous-btn:hover, #next-btn:hover {
@@ -88,6 +103,7 @@ h1{
 
 .btn.home {
   position: fixed;
+  gap: 10px;
 }
 
 

@@ -78,6 +78,11 @@ p {
   border-color: #dc3545;
 }
 
+.btn.cross_scroll {
+  background-color: #007BFF;
+  border-color: #007BFF;
+}
+
 .btn.home:hover {
   background-color: #e0a800;
   border-color: #e0a800;
@@ -93,6 +98,11 @@ p {
   border-color: #c82333;
 }
 
+.btn.cross_scroll:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
 .button-group {
   display: flex;
   justify-content: space-between;
@@ -100,9 +110,10 @@ p {
   margin-top: 20px;
 }
 
-@media (max-width: 320px) {
+@media (max-width: 720px) {
   .btn{
     padding: 9px 18px;
     font-size: 14px;
   }
+
 }

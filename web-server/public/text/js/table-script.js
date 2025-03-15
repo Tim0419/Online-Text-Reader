@@ -15,7 +15,8 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-const itemsPerPage = 100; // The max number of the buttons that show on each page
+const API_URL = "http://localhost:3000";
+const itemsPerPage = 100;
 let totalChapters = 0;
 let currentPage = 1;
 
@@ -24,12 +25,13 @@ function getTextIdFromURL() {
     const pathParts = window.location.pathname.split("/");
     return pathParts[2] || 1; 
 }
+
 const textId = getTextIdFromURL();
 
 
 async function fetchTotalChapters() {
     try {
-        const response = await fetch(`http://localhost:3000/api/text/${textId}/pages`);
+        const response = await fetch(`${API_URL}/api/text/${textId}/pages`);
         if (!response.ok) throw new Error(`HTTP Error! Status: ${response.status}`);
 
         const data = await response.json();
@@ -59,6 +61,8 @@ function renderChapterLinks(page) {
         link.className = 'btn';
         linkContainer.appendChild(link);
     }
+    
+    document.getElementById('page-input').value = page;
 }
 
 
@@ -77,7 +81,7 @@ function nextPage() {
         currentPage++;
         renderChapterLinks(currentPage);
     } else {
-        alert('It is the end page');
+        alert('It is the last page');
     }
 }
 

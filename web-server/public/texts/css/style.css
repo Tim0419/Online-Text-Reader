@@ -8,8 +8,6 @@ body {
 
 
 #button-container {
-    display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
     margin-top: 20px;
@@ -26,7 +24,9 @@ body {
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     text-decoration: none;
-    display: inline-block;
+    display: block;
+    text-align: center;
+    margin: 10px auto;
 }
 
 
