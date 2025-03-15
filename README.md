@@ -36,11 +36,11 @@ Online-Text-Reader/
 │   │   │   │   └── index.html
 │   │   │   ├── css/
 │   │   │   │   ├── style.css
-│   │   │   │   └── map-style.css
+│   │   │   │   └── table-style.css
 │   │   │   └── js/
 │   │   │       ├── functions.js
 │   │   │       ├── script.js
-│   │   │       └── map-script.js
+│   │   │       └── table-script.js
 │   │   └── index.html
 │
 ├── api-server/
@@ -65,8 +65,8 @@ Online-Text-Reader/
         - Response 
           ```json
           {
-             "id": "id"
-             "title": "title"
+             "id": "your_id"
+             "title": "your_title"
           }
       - The total pages of the text: `/api/text/{num}/pages`
          - Response
@@ -79,7 +79,7 @@ Online-Text-Reader/
          - Response
            ```json
            {
-              "content": "content"
+              "content": "your_content"
            }
            ```
 
@@ -101,18 +101,22 @@ Online-Text-Reader/
 2. Install modules
     - For web-server
         ```
-        npm install express
+        npm install express path
         ```
     - For database-server
         ```
-        npm install express cors
+        npm install express cors path fs
         ```
 
 ---
 
 # Start to use
 1. Where to put text: database-server/database/texts/{num}/text/ <-- here
-2. How to set the title of text: database-server/database/texts/{num}/title.json
+2. Where should you modify:
+   - web-server/public/texts/js/script.js `const API_URL = "http://localhost:3000(here)/api/texts";`
+   - web-server/public/text/js/table-script.js `const API_URL = "http://localhost:3000(here)";`
+   - web-server/public/text/js/script.js `const API_URL = "http://localhost:3000(here)";`
+3. How to set the title of text: database-server/database/texts/{num}/title.json
   ```json
   {
     "title": "your title"
